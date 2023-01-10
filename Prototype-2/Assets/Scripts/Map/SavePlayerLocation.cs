@@ -20,6 +20,7 @@ public class SavePlayerLocation : MonoBehaviour
 
             GameManager.Instance.Progress.levels.Add(SceneManager.GetActiveScene().name, true);
         }
+        GameManager.Save();
         //PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, 1);
     }
     

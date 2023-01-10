@@ -85,6 +85,14 @@ public class PlayerStatManager : MonoBehaviour
             player.knockback(xside, yside);
         }
     }
+
+    public void GiveHealth(float amount)
+    {
+        currentHp += amount;
+        currentHp = Mathf.Clamp(currentHp, 0, maxPlayerHP);
+        GameManager.Instance.Progress.currentHp = currentHp;
+        hpProgressUI.value = currentHp;
+    }
     
     public void setInvulnerable()
     {
