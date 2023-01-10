@@ -10,7 +10,7 @@ public class GameManager : Singleton<GameManager>
     public Text livesText;
     public Vector3 respawnPoint;
     public int doorNumber;
-    private const string PROGRESS_KEY = "Progress";
+    public const string PROGRESS_KEY = "Progress";
     
     public UserProgressData Progress;
 

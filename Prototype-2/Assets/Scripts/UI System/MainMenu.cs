@@ -81,15 +81,18 @@ public class MainMenu : Singleton<MainMenu>
 
     public void NewGameDialogYes()
     {
-        StartCoroutine(LoadLevel(_newGameLevel));
+        StartCoroutine(LoadLevel(1));
     }
 
     public void LoadGameDialogYes()
     {
-        if(PlayerPrefs.HasKey("SavedLevel"))
+        if(PlayerPrefs.HasKey("Progress"))
         {
-            levelToLoad = PlayerPrefs.GetString("SavedLevel");
-            StartCoroutine(LoadLevel(levelToLoad));
+            string json = PlayerPrefs.GetString("Progress");
+
+            var progress = JsonUtility.FromJson<UserProgressData>(json);
+            var levelIndex = progress.lastLevelIndex;
+            StartCoroutine(LoadLevel(levelIndex));
         }
         else
         {
@@ -209,11 +212,12 @@ public class MainMenu : Singleton<MainMenu>
         yield return new WaitForSeconds(2);
         confirmationPrompt.SetActive(false);
     }
-    IEnumerator LoadLevel(string levelName)
+    IEnumerator LoadLevel(int levelName)
     {
         transitionAnimator.SetTrigger("start");
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(levelName);
+        Destroy(gameObject);
     }
 }
