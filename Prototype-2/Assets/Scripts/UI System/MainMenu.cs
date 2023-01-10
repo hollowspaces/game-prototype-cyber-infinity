@@ -81,6 +81,11 @@ public class MainMenu : Singleton<MainMenu>
 
     public void NewGameDialogYes()
     {
+        if (PlayerPrefs.HasKey("Progress"))
+        {
+            PlayerPrefs.DeleteKey("Progress");
+        }
+
         StartCoroutine(LoadLevel(1));
     }
 
