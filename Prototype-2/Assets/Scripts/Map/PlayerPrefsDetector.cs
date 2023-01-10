@@ -19,7 +19,7 @@ public class PlayerPrefsDetector : MonoBehaviour
     {
         //int isVisited = PlayerPrefs.GetInt(prefsName);
 
-        int tmpVisited = GameManager.Progress.levels.ContainsKey(prefsName) ? 1 : 0;
+        int tmpVisited = GameManager.Instance.Progress.levels.ContainsKey(prefsName) ? 1 : 0;
         int isVisited = tmpVisited;
 
         if (isVisited == 0)

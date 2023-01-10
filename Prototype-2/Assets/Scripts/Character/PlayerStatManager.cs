@@ -49,7 +49,7 @@ public class PlayerStatManager : MonoBehaviour
     private void setPlayerStat()
     {
         //perlu di ubah kedepannya karena bakal ada implementasi save
-        currentHp = GameManager.Progress.currentHp;
+        currentHp = GameManager.Instance.Progress.currentHp;
         if(currentHp <= 0)
         {
             currentHp = maxPlayerHP;
@@ -74,7 +74,7 @@ public class PlayerStatManager : MonoBehaviour
             BloodEffect.Instance.setBlood();
             CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
             currentHp -= dmg;
-            GameManager.Progress.currentHp = currentHp;
+            GameManager.Instance.Progress.currentHp = currentHp;
             hpProgressUI.value = currentHp;
 
             Vector2 direction = transform.position - enemyPosition;
@@ -137,7 +137,7 @@ public class PlayerStatManager : MonoBehaviour
         {
             StartCoroutine(resetScene());
         }
-        GameManager.Progress.currentHp = maxPlayerHP;
+        GameManager.Instance.Progress.currentHp = maxPlayerHP;
         GameManager.Save();
         isDead = true;
 

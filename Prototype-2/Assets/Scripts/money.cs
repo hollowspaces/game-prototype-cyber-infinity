@@ -11,7 +11,7 @@ public class Money : MonoBehaviour
     void Start()
     {
         Instance = this;
-        currentMoney = GameManager.Progress.Money;
+        currentMoney = GameManager.Instance.Progress.Money;
 
         display.text = currentMoney.ToString();
     }
@@ -20,7 +20,7 @@ public class Money : MonoBehaviour
     {
         currentMoney += num;
         
-        GameManager.Progress.Money += num;
+        GameManager.Instance.Progress.Money += num;
         display.text = currentMoney.ToString();
         if (PopupHandler.Instance != null)
         {

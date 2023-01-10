@@ -19,7 +19,7 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        int doorIndex = GameManager.Progress.lastDoorIndex;
+        int doorIndex = GameManager.Instance.Progress.lastDoorIndex;
         for (int i = 0; i < namaLevel.Count; i++)
         {
             if (namaLevel[i] == GameManager.Instance.GetPreviousLevel())

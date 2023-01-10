@@ -25,7 +25,7 @@ public class DoorScene : MonoBehaviour
             }
 
             yield return new WaitForSeconds(transitionTime);
-            GameManager.Progress.lastDoorIndex = doorIndex;
+            GameManager.Instance.Progress.lastDoorIndex = doorIndex;
             GameManager.Save();
             SceneManager.LoadScene(index);
         }

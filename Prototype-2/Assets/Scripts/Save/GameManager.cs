@@ -11,7 +11,8 @@ public class GameManager : Singleton<GameManager>
     public Vector3 respawnPoint;
     public int doorNumber;
     private const string PROGRESS_KEY = "Progress";
-    public static UserProgressData Progress;
+    
+    public UserProgressData Progress;
 
 
     [HideInInspector] public static string prevLevel;
@@ -28,7 +29,7 @@ public class GameManager : Singleton<GameManager>
 
     public static void Save()
     {
-        string json = JsonUtility.ToJson(Progress);
+        string json = JsonUtility.ToJson(Instance.Progress);
 
         PlayerPrefs.SetString(PROGRESS_KEY, json);
 
