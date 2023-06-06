@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -47,11 +47,14 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.12</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorVersion>2.0.18</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2020.3.16f1</UnityVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\External Packages\Ludiq\Ludiq.Chronos\PlayMaker\ScaleGlobalClockTimeSmoothly.cs" />
     <Compile Include="Assets\External Packages\Ludiq\Ludiq.Chronos\Example\ExampleSpin.cs" />
@@ -102,6 +105,7 @@
     <Compile Include="Assets\Scripts\BossFire.cs" />
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
     <Compile Include="Assets\External Packages\LeanTween\Examples\Scripts\PathBezier.cs" />
+    <Compile Include="Assets\Scripts\Character\Heal.cs" />
     <Compile Include="Assets\External Packages\Ludiq\Ludiq.Chronos\Source\Timelines\RewindableParticleSystemTimeline.cs" />
     <Compile Include="Assets\External Packages\Ludiq\Ludiq.Chronos\PlayMaker\ScaleClockTimeSmoothly.cs" />
     <Compile Include="Assets\Scripts\Obstackle\Switch.cs" />
@@ -220,7 +224,7 @@
     <Compile Include="Assets\External Packages\Ludiq\Ludiq.Chronos\Source\CustomRecorder.cs" />
     <Compile Include="Assets\Scripts\Enemy\Melee\AttackAITrigger.cs" />
     <Compile Include="Assets\Scripts\UI System\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\money.cs" />
+    <Compile Include="Assets\Scripts\Money.cs" />
     <Compile Include="Assets\External Packages\Ludiq\Ludiq.Chronos\Source\LocalClock.cs" />
     <Compile Include="Assets\Scripts\Enemy\Melee\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Ending.cs" />

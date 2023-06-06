@@ -93,7 +93,7 @@ public class PlayerStatManager : MonoBehaviour
         GameManager.Instance.Progress.currentHp = currentHp;
         hpProgressUI.value = currentHp;
     }
-    
+
     public void setInvulnerable()
     {
         isInvulnerable = true;
