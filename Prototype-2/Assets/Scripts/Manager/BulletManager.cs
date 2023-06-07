@@ -93,7 +93,7 @@ public class BulletManager : MonoBehaviour
     {
         if (!Pool.ContainsKey(item.name) && (!Pool.ContainsKey(item.name)))
         {
-            Debug.LogError("INVALID POOL ITEM!!");
+            //Debug.LogError("INVALID POOL ITEM!!");
             return;
         } 
 
